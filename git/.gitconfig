@@ -15,8 +15,6 @@
     df = diff --word-diff
     l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     ldiff = log -p
-[pager]
-    diff = diff-highlight | less
 [color]
 	ui = true
 [push]

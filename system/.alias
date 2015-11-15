@@ -1,9 +1,20 @@
 # Shortcuts
 alias _="sudo"
 alias open='xgd-open'
+alias reload!=". ~/.zshrc"
+
+# cd
+alias scytale="cd ~/Projects/scytale"
+
+# grep
+alias grep='grep --color=auto'
 
 # ls
 alias l="ls -lahA"
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ip addr show"
 
 # mkdir
 alias mkdir="mkdir -pv"

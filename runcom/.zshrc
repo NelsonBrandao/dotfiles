@@ -4,6 +4,6 @@
 
 DOTFILES_DIR="$HOME/.dotfiles"
 
-for DOTFILE in "$DOTFILES_DIR"/system/.{function,env,path,alias,zsh,antigen}; do
+for DOTFILE in "$DOTFILES_DIR"/system/.{function,env,path,alias,antigen,zsh}; do
     [ -f "$DOTFILE" ] && . "$DOTFILE"
 done

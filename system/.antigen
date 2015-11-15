@@ -3,15 +3,18 @@ source ~/.antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-antigen bundle git
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
-antigen bundle command-not-found
-antigen bundle colored-man-pages
-antigen bundle colorize
-antigen bundle common-aliases
-antigen bundle zsh-users/zsh-syntax-highlighting
+# Zsh plugins
+
+antigen bundles <<EOBUNDLES
+    gitfast
+    pip
+    npm
+    colored-man-pages
+    colorize
+    docker
+
+    zsh-users/zsh-syntax-highlighting
+EOBUNDLES
 
 antigen theme NelsonBrandao/odin odin
 

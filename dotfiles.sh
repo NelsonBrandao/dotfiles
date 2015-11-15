@@ -26,3 +26,18 @@ install() {
     ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
     ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
 }
+
+case $COMMAND_NAME in
+    "" | "-h" | "--help")
+        help
+        ;;
+    *)
+        shift
+        ${COMMAND_NAME} $@
+        if [ $? = 127 ]; then
+            echo "'$COMMAND_NAME' is not a known command or has errors." >&2
+            help
+            exit 1
+        fi
+        ;;
+esac

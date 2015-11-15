@@ -1,0 +1,12 @@
+# Shortcuts
+alias _="sudo"
+alias open='xgd-open'
+
+# ls
+alias l="ls -lahA"
+
+# mkdir
+alias mkdir="mkdir -pv"
+
+# Speedtest
+alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"

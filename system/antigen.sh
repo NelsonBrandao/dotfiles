@@ -1,7 +1,5 @@
 source ~/.antigen.zsh
 
-ZSH_THEME="dracula"
-
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 

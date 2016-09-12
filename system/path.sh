@@ -6,3 +6,6 @@ prepend-path "$ANDROID_SDK_ROOT"
 prepend-path "$ANDROID_SDK_ROOT/platform-tools"
 prepend-path "$ANDROID_SDK_ROOT/tools"
 prepend-path "$NDK_ROOT"
+
+# GO
+prepend-path "$GOPATH/bin"

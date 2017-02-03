@@ -1,10 +1,9 @@
-source ~/.antigen.zsh
+source ~/.antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
 # Zsh plugins
-
 antigen bundles <<EOBUNDLES
     gitfast
     pip

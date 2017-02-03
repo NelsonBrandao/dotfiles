@@ -15,6 +15,6 @@ antigen bundles <<EOBUNDLES
     zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
-antigen theme NelsonBrandao/odin odin
+antigen theme NelsonBrandao/absolute absolute
 
 antigen apply

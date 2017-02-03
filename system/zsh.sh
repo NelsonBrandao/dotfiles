@@ -2,7 +2,6 @@
 setopt autocd nomatch
 unsetopt beep notify
 
-
 # Keybing
 typeset -A key
 

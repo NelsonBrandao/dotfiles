@@ -17,7 +17,7 @@ serve() {
 }
 
 # Simple php server
-function phpserver() {
+phpserver() {
 	local port="${1:-4000}";
 	local ip=$(ipconfig getifaddr en1);
 	sleep 1 && open "http://${ip}:${port}/" &
@@ -34,7 +34,7 @@ transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho tr
 tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }; alias transfer=transfer
 
 open() {
-    xdg-open $* &> /dev/null    
+    xdg-open $* &> /dev/null
 #    if [ $* > 0 ] ; then
 #        if [ -d $1 ] ; then
 #            nautilus $1 > /dev/null 2>&1

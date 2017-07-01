@@ -20,8 +20,5 @@ export EDITOR=nano
 export DIFFPROG=meld
 export TERM=xterm-256color
 
-# Terminix
-. /etc/profile.d/vte.sh
-
 # NVM
 export NVM_DIR="$HOME/.nvm"

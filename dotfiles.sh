@@ -22,7 +22,7 @@ reload() {
 install() {
     [ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
 
-    ln -sfv "$DOTFILES_DIR/runcom/.zshrc" ~
+    ln -sfv "$DOTFILES_DIR/zsh/.zshrc" ~
     ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
     ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
 }

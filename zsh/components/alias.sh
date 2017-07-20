@@ -3,6 +3,10 @@ alias _="sudo"
 alias o="open"
 alias reload!=". ~/.zshrc"
 
+# Folder Shortcut
+alias p="cd ~/Projects/"
+alias scy="cd ~/Projects/scytale/"
+alias dl="cd ~/Downloads"
 
 # grep
 alias grep='grep --color=auto'

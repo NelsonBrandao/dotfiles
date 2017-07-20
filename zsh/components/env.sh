@@ -1,8 +1,10 @@
 # History
 export HISTFILE=~/.histfile
-export HISTSIZE=10000
-export SAVEHIST=10000
-export HISTFILESIZE=16384;
+export HISTSIZE=32768
+export HISTFILESIZE=$HISTSIZE
+export SAVEHIST=$HISTSIZE
+export HISTCONTROL=ignoredups
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
 # Ruby
 export GEM_HOME=$(ruby -e 'puts Gem.user_dir')

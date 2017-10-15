@@ -9,7 +9,6 @@
     excludesfile = ~/.gitignore_global
     editor = nano
     pager = diff-so-fancy | less --tabs=4 -RFX
-
 [alias]
     s = status -sb
     amend = commit --amend --reuse-message=HEAD
@@ -20,8 +19,6 @@
     pf = push --force-with-lease
     prune = fetch --prune
     stash-all = stash save --include-untracked
-[color]
-    ui = always
 [color "diff"]
     meta = yellow bold
     commit = green bold
@@ -57,4 +54,4 @@
 [mergetool]
     bc4 = trustExitCode
 [init]
-	templatedir = /home/walfire/.git-templates
+    templatedir = /home/walfire/.git-templates

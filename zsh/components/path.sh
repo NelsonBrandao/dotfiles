@@ -1,5 +1,5 @@
 # Ruby
-prepend-path "$(ruby -rubygems -e 'puts Gem.user_dir')/bin"
+prepend-path "$(ruby -e 'puts Gem.user_dir')/bin"
 
 # Android
 prepend-path "$ANDROID_SDK_ROOT"

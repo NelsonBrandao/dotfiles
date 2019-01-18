@@ -29,19 +29,58 @@ prepend-path() {
     [ -d $1 ] && PATH="$1:$PATH"
 }
 
-# Transfer files from the command line
-transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi
-tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }; alias transfer=transfer
+transfer() {
+    # check arguments
+    if [ $# -eq 0 ];
+    then
+        echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"
+        return 1
+    fi
+
+    # get temporarily filename, output is written to this file show progress can be showed
+    tmpfile=$( mktemp -t transferXXX )
+
+    # upload stdin or file
+    file=$1
+
+    if tty -s;
+    then
+        basefile=$(basename "$file" | sed -e 's/[^a-zA-Z0-9._-]/-/g')
+
+        if [ ! -e $file ];
+        then
+            echo "File $file doesn't exists."
+            return 1
+        fi
+
+        if [ -d $file ];
+        then
+            # zip directory and transfer
+            zipfile=$( mktemp -t transferXXX.zip )
+            cd $(dirname $file) && zip -r -q - $(basename $file) >> $zipfile
+            curl --progress-bar --upload-file "$zipfile" "https://transfer.sh/$basefile.zip" >> $tmpfile
+            rm -f $zipfile
+        else
+            # transfer file
+            curl --progress-bar --upload-file "$file" "https://transfer.sh/$basefile" >> $tmpfile
+        fi
+    else
+        # transfer pipe
+        curl --progress-bar --upload-file "-" "https://transfer.sh/$file" >> $tmpfile
+    fi
+
+    # cat output link
+    cat $tmpfile
+
+    # cleanup
+    rm -f $tmpfile
+}
 
 open() {
     xdg-open $* &> /dev/null
-#    if [ $* > 0 ] ; then
-#        if [ -d $1 ] ; then
-#            nautilus $1 > /dev/null 2>&1
-#        else
-#            xdg-open $* &> /dev/null
-#        fi
-#    else
-#        nautilus . > /dev/null 2>&1
-#    fi
+}
+
+
+reset-blue() {
+    sudo modprobe -r btusb && sudo modprobe btusb
 }

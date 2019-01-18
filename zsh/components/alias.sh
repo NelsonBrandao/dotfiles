@@ -23,3 +23,17 @@ alias mkdir="mkdir -pv"
 
 # xclip
 alias xclip="xclip -selection c"
+
+# taskbook
+alias tb="taskbook"
+
+alias k="kubectl"
+alias k-uat="kubectl --namespace uat"
+alias k-dev="kubectl --namespace default"
+alias k-demo="kubectl --namespace demo"
+
+# Set Undervolt
+alias under="sudo intel-undervolt apply"
+
+# Git
+alias ggpf="ggpush --force-with-lease"

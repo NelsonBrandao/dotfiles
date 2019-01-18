@@ -6,3 +6,7 @@
 node_modules
 bower_components
 .vscode
+*.code-workspace
+jsconfig.json
+*.iml
+.stylelintcache

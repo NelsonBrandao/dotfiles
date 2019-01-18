@@ -54,4 +54,4 @@
 [mergetool]
     bc4 = trustExitCode
 [init]
-    templatedir = /home/walfire/.git-templates
+    #templatedir = /home/walfire/.git-templates

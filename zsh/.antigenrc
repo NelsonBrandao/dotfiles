@@ -14,5 +14,6 @@ EOBUNDLES
 
 
 antigen theme NelsonBrandao/absolute absolute
+#antigen theme /home/walfire/Projects/absolute absolute --no-local-clone
 
 antigen apply

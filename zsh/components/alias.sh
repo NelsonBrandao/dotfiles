@@ -6,6 +6,7 @@ alias reload!=". ~/.zshrc"
 # Folder Shortcut
 alias p="cd ~/Projects/"
 alias scy="cd ~/Projects/scytale/"
+alias uph="cd ~/Projects/uphold/"
 alias dl="cd ~/Downloads"
 
 # grep
@@ -26,11 +27,6 @@ alias xclip="xclip -selection c"
 
 # taskbook
 alias tb="taskbook"
-
-alias k="kubectl"
-alias k-uat="kubectl --namespace uat"
-alias k-dev="kubectl --namespace default"
-alias k-demo="kubectl --namespace demo"
 
 # Set Undervolt
 alias under="sudo intel-undervolt apply"

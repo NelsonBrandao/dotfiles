@@ -1,11 +1,20 @@
 # Ruby
-prepend-path "$(ruby -e 'puts Gem.user_dir')/bin"
+prepend-path "$GEM_HOME/bin"
 
 # Android
-prepend-path "$ANDROID_SDK_ROOT"
-prepend-path "$ANDROID_SDK_ROOT/platform-tools"
-prepend-path "$ANDROID_SDK_ROOT/tools"
-prepend-path "$NDK_ROOT"
+append-path "$ANDROID_HOME/emulator"
+append-path "$ANDROID_HOME/tools"
+append-path "$ANDROID_HOME/tools/bin"
+append-path "$ANDROID_HOME/platform-tools"
 
 # GO
 prepend-path "$GOPATH/bin"
+
+# Rust
+prepend-path "$HOME/.cargo/bin"
+
+if is-osx; then
+  prepend-path "/usr/local/bin"
+  prepend-path "/usr/local/sbin"
+  append-path "$HOME/Library/Python/3.7/bin"
+fi

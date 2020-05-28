@@ -1,6 +1,5 @@
-# Calculator
-calc() {
-    echo "$*" | bc -l;
+is-osx() {
+  [[ "$OSTYPE" =~ ^darwin ]] || return 1
 }
 
 # Create a new directory and enter it
@@ -24,9 +23,14 @@ phpserver() {
 	php -S "${ip}:${port}";
 }
 
-# Add to path
+# Add to begin of path
 prepend-path() {
     [ -d $1 ] && PATH="$1:$PATH"
+}
+
+# Add to end of path
+append-path() {
+    [ -d $1 ] && PATH="$PATH:$1"
 }
 
 transfer() {
@@ -76,11 +80,6 @@ transfer() {
     rm -f $tmpfile
 }
 
-open() {
+clean-xdg-open() {
     xdg-open $* &> /dev/null
-}
-
-
-reset-blue() {
-    sudo modprobe -r btusb && sudo modprobe btusb
 }

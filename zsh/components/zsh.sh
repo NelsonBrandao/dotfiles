@@ -1,5 +1,4 @@
 ## Settings
-# awesome cd movements from zshkit
 setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars nomatch
 DIRSTACKSIZE=5
 
@@ -9,13 +8,16 @@ setopt extendedglob
 unsetopt beep notify
 
 ## Keybing
-typeset -A key
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
 
-key[Up]=${terminfo[kcuu1]}
-key[Down]=${terminfo[kcud1]}
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+bindkey '^r' history-incremental-search-backward
 
-[[ -n "${key[Up]}"       ]]  && bindkey  "${key[Up]}"       history-beginning-search-backward
-[[ -n "${key[Down]}"     ]]  && bindkey  "${key[Down]}"     history-beginning-search-forward
+bindkey ' ' magic-space
 
 ## Color
 autoload -U colors

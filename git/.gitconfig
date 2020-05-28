@@ -6,19 +6,32 @@
     user = NelsonBrandao
 
 [core]
+	editor = nvim
+    ignorecase = false
     excludesfile = ~/.gitignore_global
-    editor = nano
     pager = diff-so-fancy | less --tabs=4 -RFX
+
 [alias]
-    s = status -sb
+    aa = add --all
     amend = commit --amend --reuse-message=HEAD
-    df = diff --word-diff
+    ap = add --patch
     branches = for-each-ref --sort=-committerdate --format=\"%(color:green)%(authordate:relative)\t%(color:blue)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+    cp = cherry-pick
+    df = diff --word-diff
     l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     ldiff = log -p
     pf = push --force-with-lease
     prune = fetch --prune
+    recent-branches = for-each-ref --count=5 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+    s = status -sb
+    rc = rebase --continue
+    unstage = reset HEAD
+    rs = rebase --skip
     stash-all = stash save --include-untracked
+
+[apply]
+    whitespace = fix
+
 [color "diff"]
     meta = yellow bold
     commit = green bold
@@ -26,32 +39,50 @@
     old = red bold
     new = green bold
     whitespace = red reverse
+
 [color "diff-highlight"]
     oldNormal = red bold
     oldHighlight = "red bold 52"
     newNormal = "green bold"
 	newHighlight = "green bold 22"
+
 [status]
     showUntrackedFiles = all
+
+[pull]
+    ff = only
+
 [push]
     default = simple
+
 [stash]
     showPatch = true
+
 [rebase]
     autoStash = true
+
 [log]
     decorate = full
+
 [help]
     autocorrect = 10
+
 [core]
     autocrlf = input
+
 [merge]
     tool = bc4
+
 [diff]
     tool = bc4
+
 [difftool]
     bc4 = trustExitCode
+
 [mergetool]
     bc4 = trustExitCode
-[init]
-    #templatedir = /home/walfire/.git-templates
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

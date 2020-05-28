@@ -1,12 +1,58 @@
-*~
+# OS files.
 ._*
 .DS_Store
+Thumbs.db
+
+# Files that might appear on external disks.
+.Spotlight-V100
+.Trashes
+
+# Always-ignore extensions.
+*~
+*.diff
+*.err
+*.orig
+*.pyc
+*.rej
+*.sass-cache
+*.sw?
+*.vi
+
+# Compiled source.
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.pyc
+
+# Package management formats.
+*.dmg
+*.xpi
+*.gem
+*.egg
+*.deb
+*.rpm
+
+# Logs and databases.
+*.log
+*.sqlite
+
+# Common project directories.
+build/*
+cache/*
+log/*
+
+# Editors
+.vscode
 .idea
 .tern-project
-node_modules
-bower_components
-.vscode
 *.code-workspace
 jsconfig.json
-*.iml
+
+# Other
+node_modules
+bower_component
 .stylelintcache
+.watchmanconfig

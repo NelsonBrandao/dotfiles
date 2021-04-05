@@ -3,7 +3,7 @@
 
 DOTFILES_DIR="$HOME/.dotfiles"
 
-for DOTFILE in "$DOTFILES_DIR"/zsh/components/{function,env,path,zplug,zsh,alias,nvm,tilix}.sh; do
+for DOTFILE in "$DOTFILES_DIR"/zsh/components/{function,env,path,zplug,spaceship,zsh,alias,nvm,tilix}.sh; do
     [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 

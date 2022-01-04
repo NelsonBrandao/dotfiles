@@ -49,3 +49,5 @@ alias ggpf="ggpush --force-with-lease"
 # AWS Backups
 alias baws="AWS_PROFILE=backups aws"
 alias backup-photos="baws s3 sync $HOME/Pictures/Camera\ Imports/ s3://nbrandao-backup-photos --exclude '*' --exclude '*.DS_Store*' --include '*.jpg' --include '*.JPG' --include '*.jpeg' --include '*.JPEG' --include '*.png' --include '*.PNG' --include '*.raf' --include '*.RAF'"
+
+alias toggleLight="curl -s 'http://10.0.0.7/relay/0?turn=toggle' > /dev/null"

@@ -56,3 +56,6 @@ node_modules
 bower_component
 .stylelintcache
 .watchmanconfig
+
+# Custom patches
+usr_patches

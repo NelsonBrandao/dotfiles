@@ -16,5 +16,6 @@ prepend-path "$HOME/.cargo/bin"
 if is-osx; then
   prepend-path "/usr/local/bin"
   prepend-path "/usr/local/sbin"
+  prepend-path "/opt/homebrew/bin"
   append-path "$HOME/Library/Python/3.7/bin"
 fi

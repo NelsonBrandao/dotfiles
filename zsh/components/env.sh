@@ -1,10 +1,11 @@
 # History
 export HISTFILE=~/.histfile
-export HISTSIZE=32768
+export HISTSIZE=1000000000
 export HISTFILESIZE=$HISTSIZE
 export SAVEHIST=$HISTSIZE
-export HISTCONTROL=ignoredups
-export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+
+# Setup Zsh cache (needed for fzf)
+export ZSH_CACHE_DIR="${TMPDIR:-/tmp}"
 
 # Ruby
 export GEM_HOME="$HOME/.gem"

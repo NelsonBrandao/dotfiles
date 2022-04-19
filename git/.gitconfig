@@ -67,9 +67,6 @@
 [help]
     autocorrect = 10
 
-[core]
-    autocrlf = input
-
 [merge]
     tool = bc4
 
@@ -87,4 +84,4 @@
 	process = git-lfs filter-process
 	required = true
 [http]
-	cookiefile = /Users/nelsonbrandao/.gitcookies
+	cookiefile = /Users/nelson.brandao/.gitcookies

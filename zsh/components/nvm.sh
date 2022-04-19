@@ -1,7 +1,7 @@
 # NVM
 export NVM_DIR="$HOME/.nvm"
 
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 
 # ZSH Hook
 autoload -U add-zsh-hook

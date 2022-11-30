@@ -44,10 +44,7 @@ if ! is-osx; then
 fi
 
 # Git
-alias ggp='git push origin "$(git_current_branch)"'
-alias ggl='git pull origin "$(git_current_branch)"'
 alias ggpf="ggpush --force-with-lease"
-alias gst="git status"
 
 # AWS Backups
 alias baws="AWS_PROFILE=backups aws"

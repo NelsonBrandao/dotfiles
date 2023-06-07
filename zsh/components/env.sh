@@ -25,9 +25,6 @@ export EDITOR=nano
 # export DIFFPROG=meld
 export TERM=xterm-256color
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-
 export BAT_THEME="TwoDark"
 
 # Disable Telemetry

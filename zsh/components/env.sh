@@ -30,6 +30,12 @@ export NVM_DIR="$HOME/.nvm"
 
 export BAT_THEME="TwoDark"
 
+# Disable Telemetry
 if is-osx; then
   export HOMEBREW_NO_ANALYTICS=1
 fi
+
+export ASTRO_TELEMETRY_DISABLED=1
+export GATSBY_TELEMETRY_DISABLED=1
+export NEXT_TELEMETRY_DISABLED=1
+export TELEMETRY_DISABLED=1

@@ -21,8 +21,6 @@ zinit light-mode for \
 zinit snippet "OMZ::lib/history.zsh"
 zinit snippet "OMZ::lib/git.zsh"
 zinit snippet "OMZ::plugins/git/git.plugin.zsh"
-# zinit snippet OMZL::git
-# zinit snippet OMZP::git
 
 # Theme
 zinit light spaceship-prompt/spaceship-prompt

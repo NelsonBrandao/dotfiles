@@ -40,3 +40,34 @@ clean-xdg-open() {
 kill-port() {
     lsof -i tcp:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9
 }
+
+li() {
+    ticketID=$1
+    
+    if [ -z "$ticketID" ]
+    then
+      branchName="$(git symbolic-ref HEAD 2>/dev/null)"
+      ticketID=${branchName##refs/heads/}
+    fi
+
+    [ ! -z "$ticketID" ] && curl \
+        -s \
+        -X POST \
+        -H "Content-Type: application/json" \
+        -H "Authorization: $LINEAR_API_KEY" \
+        --data '{ "query":"{ issue(id: \"'"$ticketID"'\") { id identifier title url } }" }' \
+        https://api.linear.app/graphql \
+        | jq -r ".data.issue | .identifier, .title, .url"
+}
+
+lio() {
+    ticketID=$1
+    
+    if [ -z "$ticketID" ]
+    then
+      branchName="$(git symbolic-ref HEAD 2>/dev/null)"
+      ticketID=${branchName##refs/heads/}
+    fi
+
+    [ ! -z "$ticketID" ] && open https://linear.app/customerio/issue/$ticketID
+}

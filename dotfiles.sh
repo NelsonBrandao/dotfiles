@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ./zsh/components/function.sh
+
 BIN_NAME=$(basename "$0")
 COMMAND_NAME=$1
 SUB_COMMAND_NAME=$2
@@ -26,6 +28,26 @@ install() {
     ln -sfv "$DOTFILES_DIR/zsh/.antigenrc" ~
     ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
     ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
+
+    installAutomatorScripts;
+    installRectangle;
+}
+
+installAutomatorScripts() {
+    if is-osx; then
+        cp -R $DOTFILES_DIR/automator-scripts/* ~/Library/Services
+    fi
+}
+
+installRectangle() {
+    if is-osx; then
+        brew install --cask rectangle
+
+        mkdir -p ~/Library/Application\ Support/Rectangle/
+        cp ./rectangle/RectangleConfig.json ~/Library/Application\ Support/Rectangle/RectangleConfig.json
+
+        defaults write com.knollsoft.Rectangle almostMaximizeWidth -float 0.80
+    fi
 }
 
 case $COMMAND_NAME in

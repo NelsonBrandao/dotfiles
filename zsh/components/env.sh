@@ -1,3 +1,5 @@
+export LANG=en_US.UTF-8
+
 # History
 export HISTFILE=~/.histfile
 export HISTSIZE=1000000000

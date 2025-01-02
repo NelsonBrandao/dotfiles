@@ -17,5 +17,6 @@ if is-osx; then
   prepend-path "/usr/local/bin"
   prepend-path "/usr/local/sbin"
   prepend-path "/opt/homebrew/bin"
+  prepend-path "/opt/homebrew/sbin"
   append-path "$HOME/Library/Python/3.7/bin"
 fi
